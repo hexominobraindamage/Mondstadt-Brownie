@@ -1,0 +1,117 @@
+*{
+font-family: 'Helvetica';
+
+margin: 0;
+padding: 0;
+}
+body{
+background-color: #444;
+    color: #fff;
+}
+
+body::before{
+content: "";
+top: 0;
+left: 0;
+position: absolute;
+opacity: 0.5;
+width: 100%;
+height: 100%;  
+  background-image: url("/img/16to9.png");
+  background-size: 100%;
+background-position: fill;
+}
+
+.inputtext{
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .75);
+    width: 450px;
+    padding: 70px;
+}
+
+.inputtext h1{
+    color: #fff;
+    font-size: 2rem;
+}
+
+.inputtext form {
+    margin:25px 0 65px
+}
+
+.field input {
+    height: 100%;
+    width:100%;
+    background: #444;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0 20px
+}
+
+.field input:is(:focus, :valid)
+{
+background:#666 ;
+padding: 16px 0 20px;
+
+}
+
+.field label{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    color: aqua;
+    transition: all 0.3s ease;
+}
+
+.field input:is(:focus, :valid) ~label
+{
+font-size: 0.75rem;
+transform: translateY(-130%);
+}
+
+form button {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1rem;
+    background: #e50914;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    margin: 25px 0 10px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+form button:hover {
+    background: #0d8ef7;
+}
+
+.inputtext a{
+    text-decoration: none;
+    color: #fff;
+}
+
+form .help {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .remember-pw{
+    display: flex;
+}
+
+form .remember-pw input{
+    margin-right: 5px;
+}
+
