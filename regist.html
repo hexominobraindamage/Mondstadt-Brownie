@@ -10,16 +10,16 @@
         <h1>Welcome!</h1>
 <form action="#">
     <div class="field">
-        <input type="text" id="username" required placeholder="Username">
+        <input type="text" id="username" required placeholder="Username" minlength="6" maxlength="18">
     </div>
     <div class="field">
-        <input type="password" id="pw" required placeholder="Password">
+        <input type="password" id="pw" required placeholder="Password" minlength="8" maxlength="20">
     </div>
     <div class="field">
-        <input type="password" id="cpw" required placeholder="Confirm Password">
+        <input type="password" id="cpw" required placeholder="Confirm Password" minlength="8" maxlength="20">
     </div>
     <div class="field">
-   <button type="submit">GO!</button>
+   <button type="submit" id="enter">GO!</button>
     </div>
     <div class="help">
         <div class="remember-pw">
