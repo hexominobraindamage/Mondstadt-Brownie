@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mondstadt Brownie</title>
     <link rel="stylesheet" href="./styles/home.css">
+        <link rel="shortcut icon" type="image/x-icon" href="./img/brownie.ico" />
 </head>
 <body>
     <div class="navbar">
@@ -13,12 +14,35 @@
                 <img src="./img/brownie.png" alt="" />
             </a>
         </div>
-            <div class="item"><a href="main.html">Listing</a></div>
-            <div class="item"><a href="discography.html">Favorites</a></div>
-            <div class="account"><a href="about.html">
-                <a href="./login.html">
+            <div class="dropdown"><a id="outline" href="">Main Songs</a>
+            <div class="dropdown-content">
+                <div class="item"><a href="">Fiesta - Fiesta 2</a></div>
+                <div class="item"><a href="">Rave It Out</a></div>
+                <div class="item"><a href="">Rave It Out 2</a></div>
+            </div>
+            </div>
+            <div class="dropdown"><a id="outline" href="">Mission Zone</a>
+                <div class="dropdown-content">
+                    <div class="item"><a href="">NX Absolute</a></div>
+                    <div class="item"><a href="">Rave It Out</a></div>
+                    <div class="item"><a href="">Rave It Out 2</a></div>
+                </div>
+            <div class="account">
+                <a id="avatar" href="./login.html">
                     <img src="./img/default-avatar.png" alt="" />
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="intro">
+        <div class="video-container">
+            <video autoplay muted loop id="myVideo">
+                <source src="./video/front.mp4" type="video/mp4">
+            </video>
+            <div class="intro-text">
+                <h1>Mondstadt Brownie</h1>
+                <h3>Simple Pump It Up chart viewer and score tracker.</h3>
             </div>
         </div>
     </div>

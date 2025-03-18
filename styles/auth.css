@@ -1,5 +1,5 @@
 *{
-font-family: 'Helvetica';
+font-family: 'Arial';
 
 margin: 0;
 padding: 0;
@@ -82,7 +82,7 @@ form button {
     width: 100%;
     padding: 16px 0;
     font-size: 1rem;
-    background: #e50914;
+    background: #332b20;
     color: #fff;
     font-weight: 500;
     border-radius: 4px;
@@ -90,11 +90,12 @@ form button {
     outline: none;
     margin: 25px 0 10px;
     cursor: pointer;
-    transition: 0.1s ease;
+    transition: 0.5s ease;
 }
 
 form button:hover {
-    background: #0d8ef7;
+    background: #6a5940;
+    transition: 0.5s ease;
 }
 
 .inputtext a{
@@ -115,3 +116,8 @@ form .remember-pw input{
     margin-right: 5px;
 }
 
+.extra{
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+}

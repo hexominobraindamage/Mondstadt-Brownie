@@ -6,17 +6,17 @@ function validatePasswords() {
     var confirmPassword = document.getElementById("cpw").value;
 
     if (password === confirmPassword) {
-        return
+        passwordValidated();
+        return;
     } else {
-        alert("Please check your password!");
-        return
+        alert("Password must be the same!");
+        return;
     }
 }
-
-document.addEventListener("DOMContentLoaded", function() {
+function passwordValidated() {
     var form = document.querySelector("form");
     form.addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent the default form submission
         window.location.href = "./home.html";
     });
-});
+}
