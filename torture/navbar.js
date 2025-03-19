@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("/navbar.html")
+    fetch("../../../navbar.html")
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          console.warn(`Navbar not found. HTTP status: ${response.status}`);
+          return ""; // Return empty string if navbar.html is missing
         }
         return response.text();
       })
       .then((data) => {
-        document.body.insertAdjacentHTML("afterbegin", data);
+        if (document.body) {
+          document.body.insertAdjacentHTML("afterbegin", data);
+        } else {
+          console.error("Document body is not available.");
+        }
       })
       .catch((error) => {
         console.error("Error fetching navbar:", error);
