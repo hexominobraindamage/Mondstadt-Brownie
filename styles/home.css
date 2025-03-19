@@ -12,120 +12,29 @@ body {
   color: white;
 }
 
-.navbar {
+.footer {
+  margin-top: 100px;
+}
+.footer-item {
   width: 100%;
-  position: fixed;
-  top: 0px;
   left: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(71, 52, 47);
 }
 
-.items {
-  background-color: rgb(71, 52, 47);
+.footer-item a {
   display: flex;
   align-items: center;
   position: relative;
+  text-decoration: none;
   color: white;
-}
-
-.navbar .item a {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
   font-size: 17px;
+  margin-top: 20px;
 }
 
-.dropdown{
-  display:flex;
-}
-.navbar .item a:hover {
-  background-color: rgb(255, 150, 150);
-  color: whitesmoke;
-  transition: background-color 0.5s, color 0.5s;
-}
-
-.navbar a img {
-  width: 25px;
-  height: 20px;
-  margin-left: 10px;
-
-  margin-right: 15px;
-}
-
-.account {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 0px;
-}
-
-.account a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-size: 17px;
-}
-
-#avatar img {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #888888;
-  border-radius: 10%;
-  margin-right: 30px;
-}
-
-
-#outline {
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-}
-#outline:hover {
-  background-color: rgb(255, 150, 150);
-}
-
-@keyframes moveDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #644242;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  top: 100%;
-  animation: moveDown 0.5s ease-out;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  animation: moveDown 0.5s ease-out;
-}
-
-.dropdown-content a {
-  padding: 12px 8px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.intro{
+.intro {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +53,7 @@ body {
   z-index: -1;
 }
 
-.video-container:before{
+.video-container:before {
   content: "";
   position: absolute;
   top: 0;
@@ -157,7 +66,6 @@ body {
 .video-container video {
   width: 100%;
   height: auto;
-
 }
 
 .video-container .intro-text {
@@ -172,8 +80,8 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.brownie
-{align-items: center;
+.brownie {
+  align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -182,36 +90,13 @@ body {
   font-size: x-large;
 }
 
-.song-list{
+.song-list {
   display: flex;
   justify-content: space-around;
 }
-.song-list img{
+.song-list img {
   width: 400px;
   margin: 20px;
-}
-
-.footer{
-  margin-top: 100px;
-}
-.footer-item {
-  width: 100%;
-  left: 0px;
-  padding: 0px;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: rgb(71, 52, 47);
-}
-
-
-.footer-item a {
-    display: flex;
-    align-items: center;
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-size: 17px;
-    margin-top: 20px;
 }
 
 .footer-item a:hover {
@@ -222,9 +107,9 @@ body {
   display: flex;
   align-items: center;
   margin-top: 70px;
-  justify-content: left
+  justify-content: left;
 }
-.avatar img{
+.avatar img {
   width: 150px;
   height: 150px;
   border: 2px solid #888888;
@@ -232,11 +117,11 @@ body {
   margin-right: 30px;
 }
 
-.plays{
+.plays {
   display: flex;
   justify-content: space-between;
 }
-.play-table{
+.play-table {
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
@@ -246,25 +131,25 @@ body {
   width: 75vh;
 }
 
-.play-table th{
+.play-table th {
   padding: 10px;
   background-color: rgb(71, 52, 47);
   color: white;
 }
 
-.play-table td{
+.play-table td {
   padding: 10px;
   background-color: rgb(71, 52, 47);
   color: white;
 }
 
-.songlist{
-margin-top: 75px;
-text-align: center;
-font-size: larger;
+.songlist {
+  margin-top: 75px;
+  text-align: center;
+  font-size: larger;
 }
 
-iframe{
+iframe {
   margin-top: 50px;
   margin-bottom: 50px;
   width: 100%;
@@ -272,17 +157,17 @@ iframe{
   z-index: -1;
 }
 
-.difficulty-select{
+.difficulty-select {
   justify-content: center;
   background-color: #644242;
-padding: 20px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.diff button{
+.diff button {
   padding: 10px;
   margin: 10px;
   background-color: rgb(71, 52, 47);
@@ -291,24 +176,22 @@ padding: 20px;
   cursor: pointer;
 }
 
-#single{
+#single {
   background-color: rgb(255, 43, 39);
 }
 
-.cover
-{
+.cover {
   display: flex;
   justify-content: space-evenly;
 }
 
-.chartslist{
+.chartslist {
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
 }
 
-.chartslist img{
+.chartslist img {
   width: 400px;
   margin: 20px;
 }
-
