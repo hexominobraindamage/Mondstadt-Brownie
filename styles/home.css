@@ -1,6 +1,6 @@
 body {
   font-family: "Arial", sans-serif;
-  margin: 0;
+  margin: 10px;
 
   background-color: #111;
   background-size: 10%;
@@ -35,6 +35,9 @@ body {
   font-size: 17px;
 }
 
+.dropdown{
+  display:flex;
+}
 .navbar .item a:hover {
   background-color: rgb(255, 150, 150);
   color: whitesmoke;
@@ -70,9 +73,7 @@ body {
   border: 2px solid #888888;
   border-radius: 10%;
   margin-right: 30px;
-  transform: translateY(-41px);
 }
-
 
 
 #outline {
@@ -137,7 +138,7 @@ body {
 .video-container {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 50%;
   overflow: hidden;
   top: 50px;
   z-index: -1;
@@ -170,3 +171,144 @@ body {
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+
+.brownie
+{align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50px;
+  font-size: x-large;
+}
+
+.song-list{
+  display: flex;
+  justify-content: space-around;
+}
+.song-list img{
+  width: 400px;
+  margin: 20px;
+}
+
+.footer{
+  margin-top: 100px;
+}
+.footer-item {
+  width: 100%;
+  left: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(71, 52, 47);
+}
+
+
+.footer-item a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.footer-item a:hover {
+  background-color: rgb(255, 150, 150);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+  justify-content: left
+}
+.avatar img{
+  width: 150px;
+  height: 150px;
+  border: 2px solid #888888;
+  border-radius: 10%;
+  margin-right: 30px;
+}
+
+.plays{
+  display: flex;
+  justify-content: space-between;
+}
+.play-table{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  flex-direction: column;
+  border: 1px solid white;
+  width: 75vh;
+}
+
+.play-table th{
+  padding: 10px;
+  background-color: rgb(71, 52, 47);
+  color: white;
+}
+
+.play-table td{
+  padding: 10px;
+  background-color: rgb(71, 52, 47);
+  color: white;
+}
+
+.songlist{
+margin-top: 75px;
+text-align: center;
+font-size: larger;
+}
+
+iframe{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 500px;
+  z-index: -1;
+}
+
+.difficulty-select{
+  justify-content: center;
+  background-color: #644242;
+padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.diff button{
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(71, 52, 47);
+  color: white;
+  border-radius: 40%;
+  cursor: pointer;
+}
+
+#single{
+  background-color: rgb(255, 43, 39);
+}
+
+.cover
+{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.chartslist{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.chartslist img{
+  width: 400px;
+  margin: 20px;
+}
+
