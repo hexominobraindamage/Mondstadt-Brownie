@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("../../../navbar.html")
+    fetch("/navbar.html")
       .then((response) => {
         if (!response.ok) {
           console.warn(`Navbar not found. HTTP status: ${response.status}`);
