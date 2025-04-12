@@ -1,52 +1,46 @@
-import { TMDB_API_KEY } from "./config.js";
+//very rudimentary search API from scratch because i can't fucking use TMDB API for this project. Why didn't I just go with the movie showcase project instead...
+// prolly could leave this for later but nah that's too boring to do
+// god i should stop swearing my tutor will be pissed if he sees this mess
 
-const searchQuery = new URLSearchParams(location.search);
+//took me a good 30 minutes of struggling to find out what i missed
+const songCardtemp = document.querySelector("[data-songcard-template]");
+const songCardContainer = document.querySelector("[data-songcards-container]");
+const searchInput = document.querySelector("[data-search]");
 
-const query = searchQuery.get("q")?.trim();
+let song = [];
 
-(async () => {
-  if (query) {
-    const data = await (
-      await fetch(
-        `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
-          query
-        )}&api_key=${TMDB_API_KEY}`
-      )
-    ).json();
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.trim().toLowerCase();
+  song.forEach((song) => {
+    const isVisible = song.title.toLowerCase().includes(value);
+    song.element.classList.toggle("hide", !isVisible);
+  });
+});
 
-    console.log(data);
+// finally made sense of this code, i really fucking need some sleep it's 1:40 as of this writing
+// this is a fetch request to get the data from the json "server", and then map the data to the song array
+//TODO: make things clickable
+fetch(
+  "https://my-json-server.typicode.com/littleheartsbms/Mondstadt-Brownie/songs"
+)
+  .then((response) => response.json())
+  .then((data) => {
+    song = data.map((song) => {
+      const card = songCardtemp.content.cloneNode(true).children[0];
+      const title = card.querySelector("[data-title]");
+      const artist = card.querySelector("[data-artist]");
+      const series = card.querySelector("[data-series]");
 
-    document.querySelector("form").style.display = "none";
-    document.querySelector("#movie-grid").style.display = "grid";
+      title.textContent = song.title;
+      artist.textContent = song.artist;
+      series.textContent = song.series;
 
-    document.querySelector("#movie-grid").innerHTML = /*html*/ `
-    <h1 className="text-2xl mb-8">
-      Search result for '${query}'</h1>
-    <div
-    >
-      ${data.results
-        .map(
-          (item) => /*html*/ `
-            <a href="./info.html?id=${item.id}" >
-              <div class="movie-card">
-                <img
-                  style="width: auto; height: auto; aspect-ratio: 2/3"
-                  class="fade-in"
-                  onload="this.style.opacity = '1'"
-                  src="https://image.tmdb.org/t/p/w200${item.poster_path}"
-                  alt=""
-                />
-                <p class="multiline-ellipsis-2">
-                  ${item.title || item.name}
-                </p>
-              </div>
-            </a>
-      `
-        )
-        .join("")}
-    </div>
-  `;
-  }
-
-  document.querySelector(".backdrop").classList.add("backdrop-hidden");
-})();
+      songCardContainer.append(card);
+      return {
+        title: song.title,
+        artist: song.artist,
+        series: song.series,
+        element: card,
+      };
+    });
+  });

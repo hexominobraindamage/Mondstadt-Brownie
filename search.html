@@ -13,11 +13,21 @@
     <div class="inputtext">
       <h1>Search for a song...</h1>
       <form action="#">
-
         <div class="field">
-          <input type="text" id="search" required placeholder="Song name..." />
+          <input type="text" id="search" data-search required placeholder="Song name..." />
         </div>
+        <div class="songcards" data-songcards-container></div>
+        <template data-songcard-template>  
+          <div class="songcard" >
+            <div class="name" data-title></div>
+           <div class="info">
+            <div class="artist" data-artist></div>
+            <div class="series" data-series></div>
+          </div>
+          </div>
+        </template>
 </div>
+<script src="./torture/search.js"></script>
 </body>
   <div class="footer">
     <div class="footer-item">
@@ -37,4 +47,5 @@
 
       and lots of pressure and lots of wasted sleep hours.
     </h5>
+
   </div>
