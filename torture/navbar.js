@@ -18,3 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error fetching navbar:", error);
       });
   });
+
+  let storedUser = localStorage.getItem("currentUser");
+  if (storedUser) {
+      let currentUser = JSON.parse(storedUser);
+      let user = document.querySelector(".user-account"); // Updated selector
+      if (user) {
+          user.innerHTML = `
+              <a href="./profile.html" class="user-link">${currentUser.username}</a>
+              <a href="./index.html" class="logout">Logout</a>
+          `;
+      } else {
+          console.warn("Element with class 'user-account' not found in the DOM."); // Updated warning
+      }
+  }
