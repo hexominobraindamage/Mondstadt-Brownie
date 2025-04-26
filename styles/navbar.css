@@ -11,7 +11,17 @@ body {
   box-sizing: border-box;
   color: white;
 }
-
+/* wtf is happening */
+#search a:hover {
+  background-color: rgb(255, 150, 150);
+  color: white;
+  transition: background-color 0.5s, color 0.5s;
+}
+#logger a:hover {
+  background-color: rgb(255, 150, 150);
+  color: white;
+  transition: background-color 0.5s, color 0.5s;
+}
 .navbar {
   width: 100%;
   position: fixed;
@@ -66,6 +76,7 @@ body {
   color: rgb(255, 255, 255);
   font-size: 17px;
 }
+
 
 #avatar img {
   width: 40px;
