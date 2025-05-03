@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/navbar.css" />
     <link rel="stylesheet" href="./styles/search.css" />
-    <script src="./torture/navbar.js"></script>
+
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <body>
@@ -14,6 +14,9 @@
 $.get("navbar.html", function(data){
 $("#nav").replaceWith(data);
 });
+$.get("footer.html", function (data) {
+        $(".footer").replaceWith(data);
+      });
 </script>
 <div id="nav"></div>
  <div class="search-wrp">
@@ -27,6 +30,7 @@ $("#nav").replaceWith(data);
         <template data-songcard-template>  
           <div class="songcard" >
             <div class="name" data-title></div>
+           <!-- <a href="" class="name" data-title></a> -->
            <div class="info">
             <div class="artist" data-artist></div>
             <div class="series" data-series></div>
@@ -34,25 +38,7 @@ $("#nav").replaceWith(data);
           </div>
         </template>
 </div>
+<div class="footer"></div>
 <script src="./torture/search.js"></script>
 </body>
-  <div class="footer">
-    <div class="footer-item">
-      <div class="textf"><h3>Contact us...</h3></div>
-      <div class="item2"><a href="">GitHub repo</a></div>
-      <div class="item2"><a href="">Facebook</a></div>
-      <div class="item2"><a href="">Twitter</a></div>
-    </div>
-    <div class="footer-item">
-      <div class="textf"><h3>Legal</h3></div>
-      <div class="item2"><a href="">Removal Request</a></div>
-      <div class="item2"><a href="">Terms of Service</a></div>
-    </div>
-    <h4>&copy; 2025 Fumilette</h4>
-    <h5>
-      Made with <3 <br />
-
-      and lots of pressure and lots of wasted sleep hours.
-    </h5>
-
-  </div>
+ 

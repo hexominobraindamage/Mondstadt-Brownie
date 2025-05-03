@@ -135,4 +135,8 @@ body {
   background-color: #ddd;
 }
 
+.hide {
+  display: none;
+}
+
 

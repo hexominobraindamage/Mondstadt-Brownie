@@ -8,16 +8,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="./img/brownie.ico" />
   </head>
   <!-- <script src="./torture/navbar.js"></script> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
- <script>
-$.get("navbar.html", function(data){
-  $("#nav").replaceWith(data);
-});
- </script>
-<div id="nav">
-
-</div>
+    <script>
+      $.get("navbar.html", function (data) {
+        $("#nav").replaceWith(data);
+      });
+      $.get("footer.html", function (data) {
+        $(".footer").replaceWith(data);
+      });
+    </script>
+    <div id="nav"></div>
     <div class="intro">
       <div class="video-container">
         <video autoplay muted loop id="myVideo">
@@ -35,35 +36,19 @@ $.get("navbar.html", function(data){
       The site also includes a simple socre tracker to keep track of your
       scores. <br />
 
-        <br />
-        Currently, the site is still <strong>UNDER HEAVY DEVELOPMENT</strong> <br />
-        <br> Breakages are really bound to occur here and there, so please report any issues as you see.
-        <br> Also, please be patient as there is only one person working on this project.
-        <br>
-        <br>
-        <h1>Charts available: 6 </h1>
-
+      <br />
+      Currently, the site is still <strong>UNDER HEAVY DEVELOPMENT</strong>
+      <br />
+      <br />
+      Breakages are really bound to occur here and there, so please report any
+      issues as you see. <br />
+      Also, please be patient as there is only one person working on this
+      project.
+      <br />
+      <br />
+      <h1>Charts available: Not 6</h1>
     </div>
 
-    <div class="footer">
-      <div class="footer-item">
-        <div class="textf"><h3>Contact us...</h3></div>
-        <div class="item2"><a href="">GitHub repo</a></div>
-        <div class="item2"><a href="">Facebook</a></div>
-        <div class="item2"><a href="">Twitter</a></div>
-      </div>
-      <div class="footer-item">
-        <div class="textf"><h3>Legal</h3></div>
-        <div class="item2"><a href="">Removal Request</a></div>
-        <div class="item2"><a href="">Terms of Service</a></div>
-      </div>
-      <h4>&copy; 2025 Fumilette</h4>
-      <h5>
-        Made with <3 <br />
-
-        and lots of pressure and lots of wasted sleep hours.
-        <br />Heavily powered by Streamable.
-      </h5>
-    </div>
+ <div class="footer"></div>
   </body>
 </html>

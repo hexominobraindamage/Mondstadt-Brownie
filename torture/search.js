@@ -30,7 +30,8 @@ fetch(
       const title = card.querySelector("[data-title]");
       const artist = card.querySelector("[data-artist]");
       const series = card.querySelector("[data-series]");
-
+// title.href = `./${song.title}.html`;
+// title.target = "_blank";
       title.textContent = song.title;
       artist.textContent = song.artist;
       series.textContent = song.series;

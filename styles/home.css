@@ -14,14 +14,20 @@ body {
 
 .footer {
   margin-top: 100px;
+  display: flex;
+  border-radius: 10px;
+  background-color: rgb(71, 52, 47);
+  padding-left:10px
 }
 .footer-item {
   width: 100%;
   left: 0px;
-  padding: 0px;
+  padding: 5px;
   display: flex;
-  justify-content: space-evenly;
-  background-color: rgb(71, 52, 47);
+  flex-direction: column;
+  justify-content: baseline;
+
+
 }
 
 .footer-item a {
@@ -32,6 +38,7 @@ body {
   color: white;
   font-size: 17px;
   margin-top: 20px;
+  padding: 10px;
 }
 
 .intro {
@@ -202,4 +209,20 @@ iframe {
 .chartslist img {
   width: 400px;
   margin: 20px;
+}
+
+.footer i {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+.hide {
+  display: none;
+}
+.buttons input{
+  background-color: rgb(71, 52, 47);
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
 }

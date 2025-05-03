@@ -13,6 +13,9 @@
 $.get("navbar.html", function(data){
 $("#nav").replaceWith(data);
 });
+$.get("/footer.html", function (data) {
+        $(".footer").replaceWith(data);
+      });
 </script>
 <div id="nav"></div>
 <div class="body">
@@ -54,23 +57,7 @@ $("#nav").replaceWith(data);
 
 
       <div class="footer">
-        <div class="footer-item">
-          <div class="textf"><h3>Contact us...</h3></div>
-          <div class="item2"><a href="">GitHub repo</a></div>
-          <div class="item2"><a href="">Facebook</a></div>
-          <div class="item2"><a href="">Twitter</a></div>
-        </div>
-        <div class="footer-item">
-          <div class="textf"><h3>Legal</h3></div>
-          <div class="item2"><a href="">Removal Request</a></div>
-          <div class="item2"><a href="">Terms of Service</a></div>
-        </div>
-        <h4>&copy; 2025 Fumilette</h4>
-        <h5>
-          Made with <3 <br />
-  
-          and lots of pressure and lots of wasted sleep hours.
-        </h5>
+     
       </div>
 </body>
 </html>

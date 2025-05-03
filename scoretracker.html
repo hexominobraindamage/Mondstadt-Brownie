@@ -14,6 +14,9 @@
     <script>
       $.get("navbar.html", function (data) {
         $("#nav").replaceWith(data);
+        $.get("footer.html", function (data) {
+        $(".footer").replaceWith(data);
+      });
       });
     </script>
     <div id="nav"></div>
@@ -27,38 +30,23 @@
           <input type="text" placeholder="Song Name" id="sn" />
           <input type="number" placeholder="Level" id="lvl" maxlength="2" />
         </div>
-        <input type="number" placeholder="Perfect" id="pf" />
-        <input type="number" placeholder="Great" id="gr" />
-        <input type="number" placeholder="Good" id="gd" />
-        <input type="number" placeholder="Bad" id="bd" />
-        <input type="number" placeholder="Miss" id="ms" />
-        <input type="number" placeholder="Max Combo" id="mc" />
-        <input type="number" placeholder="Notes" id="nt" />
+        <input type="number" placeholder="Perfect" id="pf" oninput="updateValue()" />
+        <input type="number" placeholder="Great" id="gr" oninput="updateValue()"/>
+        <input type="number" placeholder="Good" id="gd" oninput="updateValue()"/>
+        <input type="number" placeholder="Bad" id="bd" oninput="updateValue()"/>
+        <input type="number" placeholder="Miss" id="ms" oninput="updateValue()"/>
+        <input type="number" placeholder="Max Combo" id="mc" oninput="updateValue()"/>
+        <input type="number" placeholder="Notes" id="nt" oninput="updateValue()"/>
+      </div>
+      <div class="buttons">
+        <input type="button" value="Save score">
+        <input type="button" value="Reset fields">
       </div>
     </div>
 <div class="gradeandsave">
 
 </div>
-    <div class="footer">
-      <div class="footer-item">
-        <div class="textf"><h3>Contact us...</h3></div>
-        <div class="item2"><a href="">GitHub repo</a></div>
-        <div class="item2"><a href="">Facebook</a></div>
-        <div class="item2"><a href="">Twitter</a></div>
-      </div>
-      <div class="footer-item">
-        <div class="textf"><h3>Legal</h3></div>
-        <div class="item2"><a href="">Removal Request</a></div>
-        <div class="item2"><a href="">Terms of Service</a></div>
-      </div>
-      <h4>&copy; 2025 Fumilette</h4>
-      <h5>
-        Made with <3 <br />
-
-        and lots of pressure and lots of wasted sleep hours.
-        <br />Heavily powered by Streamable.
-      </h5>
-    </div>
+  <div class="footer"></div>
   </body>
-  <script src="/torture/scoretracking.js"></script>
+  <script src="./torture/scoretracking.js"></script>
 </html>
