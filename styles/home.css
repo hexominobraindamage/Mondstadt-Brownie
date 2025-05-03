@@ -12,12 +12,19 @@ body {
   color: white;
 }
 
+/* h1{
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 50px;
+} */
 .footer {
   margin-top: 100px;
   display: flex;
   border-radius: 10px;
   background-color: rgb(71, 52, 47);
-  padding-left:10px
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 .footer-item {
   width: 100%;
@@ -26,8 +33,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: baseline;
+}
 
-
+.textf {
+  margin-left: 10px;
 }
 
 .footer-item a {
@@ -219,10 +228,51 @@ iframe {
 .hide {
   display: none;
 }
-.buttons input{
+.buttons input {
   background-color: rgb(71, 52, 47);
   color: white;
   padding: 10px;
   margin: 10px;
   cursor: pointer;
+}
+.profilesettings {
+  background-color: rgb(71, 52, 47);
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.profilesettings:hover {
+  background-color: rgb(255, 150, 150);
+}
+
+.avatar img {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.avatarpreview {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.avatarpreview img {
+  border: 5px solid #888888;
+  border-radius: 10%;
+  margin-right: 30px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+}
+
+.input input {
+max-width: 200px;
+}
+.notlabel{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
 }

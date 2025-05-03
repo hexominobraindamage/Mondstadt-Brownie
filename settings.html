@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change profile settings...</title>
+    <link rel="stylesheet" href="./styles/home.css" />
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $.get("navbar.html", function (data) {
+      $("#nav").replaceWith(data);
+    });
+    $.get("/footer.html", function (data) {
+      $(".footer").replaceWith(data);
+    });
+  </script>
+  <body>
+    <div id="nav"></div>
+    <div class="settings" style="margin-top: 80px">
+      <h1
+        style="
+          color: white;
+          font-size: 40px;
+          text-align: center;
+          margin-top: 50px;
+        "
+      >
+        Change profile settings
+      </h1>
+      More configuration options coming soon!
+      <div class="notlabel">
+
+        <div class="labelscontainer">
+          <div class="input">
+            Avatar:
+            <input id="image-file" type="file" />
+          </div>
+          <div class="input">
+            <span style="margin-bottom: 10px">Current player name: </span>
+            New player name:
+            <input type="text" name="" id="namechange" />
+          </div>
+          <div class="input">
+            <span style="margin-bottom: 10px">Current email: </span>
+            New email account:
+            <input type="text" name="" id="emailchange" autocomplete="off"> 
+            <input type="button" value="Save changes" save-modified-changes>
+          </div>
+          <div class="input">
+            <span style="margin-top: 20px; margin-bottom: 20px; font-weight:700; font-size:x-large">Change password</span>
+            Old password:
+            <input type="password" name="" id="oldpw" autocomplete="off">
+            <br>New Password:
+            <input type="password" name="" id="newpw" autocomplete="off"
+            <br>Repeat New Password:
+            <input type="password" name="" id="confirmnewpw" autocomplete="off">
+            <input type="button" value="Change password" confirm-new-pw>
+          </div>
+        </div>
+
+        <div class="avatarpreview">
+          <!-- what do you know, im having a headache from this -->
+
+          <img
+            src="./img/default-avatar.png"
+            alt=""
+            id="image-display"
+            style="max-width: 150px; max-height: 150px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
+  <script src="./torture/config.js"></script>
+</html>

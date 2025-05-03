@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My profile</title>
     <link rel="stylesheet" href="./styles/home.css" />
-    <link rel="stylesheet" href="./styles/navbar.css" />
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <body>
@@ -17,7 +16,7 @@ $.get("/footer.html", function (data) {
       });
 </script>
 <div id="nav"></div>
-<div class="body">
+<div class="profilecontainer">
     <div class="profile">
         <div class="avatar">
           <img src="./img/default-avatar.png" alt="" />
@@ -25,10 +24,15 @@ $.get("/footer.html", function (data) {
         <div class="info">
           <div class="name"><h1>Default User</h1></div>
           <div class="name"><h2>PUMBILITY: 0</h2></div>
+          <div class="changeset">
+            <a href="./settings.html" class="profilesettings">Change Settings</a>
+            <a href="" class="profilesettings">Manage Scores</a>
         </div>
+        </div>
+
     </div>
     <div class="plays">
-            <div class="bp"><h1>Best Plays</h1>
+            <div class="bp"><h2>Best Plays</h2>
                 <table class="play-table">
                     <tr>
                         <th>Song</th>
@@ -39,7 +43,7 @@ $.get("/footer.html", function (data) {
                         
                 </table>
     </div>
-    <div class="rp"><h1>Recent Plays</h1>
+    <div class="rp"><h2>Recent Plays</h2>
         <table class="play-table">
             <tr>
                 <th>Song</th>

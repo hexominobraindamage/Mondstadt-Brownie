@@ -12,16 +12,16 @@ body {
   color: white;
 }
 /* wtf is happening */
-#search a:hover {
+a:hover {
   background-color: rgb(255, 150, 150);
   color: white;
   transition: background-color 0.5s, color 0.5s;
 }
-#logger a:hover {
+ /* #logger a:hover {
   background-color: rgb(255, 150, 150);
   color: white;
   transition: background-color 0.5s, color 0.5s;
-}
+}  */
 .navbar {
   width: 100%;
   position: fixed;
@@ -77,7 +77,10 @@ body {
   font-size: 17px;
 }
 
+#avatar:hover {
+  background-color: rgba(255, 150, 150, 0);
 
+}
 #avatar img {
   width: 40px;
   height: 40px;
