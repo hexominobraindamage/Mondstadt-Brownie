@@ -12,7 +12,7 @@ body {
   color: white;
 }
 /* wtf is happening */
-a:hover {
+.navbar a:hover {
   background-color: rgb(255, 150, 150);
   color: white;
   transition: background-color 0.5s, color 0.5s;
@@ -77,6 +77,11 @@ a:hover {
   font-size: 17px;
 }
 
+
+#avatar{
+  display: none;
+}
+
 #avatar:hover {
   background-color: rgba(255, 150, 150, 0);
 
@@ -113,7 +118,7 @@ a:hover {
 }
 
 .dropdown-content {
-  display: none;
+display: none;
   position: absolute;
   background-color: #644242;
   min-width: 160px;

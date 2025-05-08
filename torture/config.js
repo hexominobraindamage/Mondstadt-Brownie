@@ -1,72 +1,118 @@
 // because recycling is good for the environment, and this is a good practice to do so.
 // thanks poicitaco on github for the fixed codebase
 
-var button = document.getElementById('button');
-button.addEventListener('click', fillForm);
-button.addEventListener('click', submitForm);
-button.addEventListener('click', saveToLocal);
-dispFromLocal();
+const saveChanges = document.querySelector("[save-modified-changes]");
+const savePassword = document.querySelector("[confirm-new-pw]");
+saveChanges.addEventListener("click", saveData);
+// savePassword.addEventListener('click', changePassword);
 
-function submitForm(event) {
-    event.preventDefault();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  fetchData();
+});
 
-function fillForm() {
-    var name = document.getElementById('name').value;
-    var mail = document.getElementById('email').value;
-    var phone = document.getElementById('phoneno').value;
-    var location = document.getElementById('location').value;
+function saveData(event) {
+  event.preventDefault();
 
-
-    var imageFile = document.getElementById('image-file').files[0];
-    if (imageFile) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('image-display').src = e.target.result; // Hiển thị ảnh đã chọn
-        };
-        reader.readAsDataURL(imageFile); // Chuyển ảnh thành base64
+  var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  var currentuserIndex = JSON.parse(localStorage.getItem("users")).findIndex(
+    (users) => users.username === currentUser.username
+  );
+  var index = currentuserIndex;
+  var newUsername = document.getElementById("namechange").value;
+  var newEmail = document.getElementById("emailchange").value;
+  var imageFile = document.getElementById("file-upload").files[0];
+  if (imageFile) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById("image-display").src = e.target.result; // Display selected image
+    };
+    reader.readAsDataURL(imageFile); // Convert image to base64
+  }
+  let users = localStorage.getItem("users");
+  if (newUsername === "") {
+    currentUser.username = currentUser.username; // Keep the old username if new username is empty
+  } else if (newUsername.length < 6) {
+    alert("Username is too short! Lengthen it to at least 6 characters.");
+    return;
+  } else {
+    currentUser.username = newUsername;
+  }
+  if (newEmail === "") {
+    currentUser.email = currentUser.email; // Keep the old email if new email is empty
+  } else if (!newEmail.includes("@")) {
+    alert("Email is in invalid format!");
+    return; // Stop further execution
+  } else {
+    currentUser.email = newEmail;
+  }
+  if (imageFile) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var image = e.target.result; // Get the new image as base64
+      document.getElementById("image-display").src = image; // Display selected image
+      currentUser["profilePicture"] = image;
+      if (users) {
+        try {
+          users = JSON.parse(users);
+          if (users !== null) {
+            if (newUsername.length >= 6) {
+              users[index].username = newUsername;
+            } else if (newUsername.length > 0) {
+              alert("Username is too short! Lengthen it to at least 6 characters.");
+              return;
+            }
+            if (newEmail.includes("@")) {
+              users[index].email = newEmail;
+            } else if (newEmail.length > 0) {
+              alert("Email is in invalid format!");
+              return; // Stop further execution
+            }
+            users[index]["profilePicture"] = image;
+            localStorage.setItem("users", JSON.stringify(users)); // Save updated data back to localStorage
+          }
+        } catch (error) {
+          console.error("Fetching user data failed!", error);
+        }
+      }
+      localStorage.setItem("currentUser", JSON.stringify(currentUser)); // Save updated data back to localStorage
+    };
+    reader.readAsDataURL(imageFile); // Convert image to base64
+  } else {
+    localStorage.setItem("currentUser", JSON.stringify(currentUser)); // Save updated data back to localStorage
+    if (users) {
+      try {
+        users = JSON.parse(users);
+        if (users !== null) {
+          users[index].username = newUsername;
+          users[index].email = newEmail;
+          localStorage.setItem("users", JSON.stringify(users)); // Save updated data back to localStorage
+        }
+      } catch (error) {
+        console.error("Fetching user data failed!", error);
+      }
     }
-
-
-    document.getElementById('namedisp').innerHTML = "Tên: " + name;
-    document.getElementById('emaildisp').innerHTML = "Email: " + mail;
-    document.getElementById('phonedisp').innerHTML = "Số điện thoại: " + phone;
-    document.getElementById('locationdisp').innerHTML = "Địa điểm: " + location;
+  }
+  alert("Changes saved successfully!");
+  location.reload();
 }
 
-function saveToLocal() {
-    localStorage.setItem('nameSet', document.getElementById('namedisp').innerHTML);
-    localStorage.setItem('mailSet', document.getElementById('emaildisp').innerHTML);
-    localStorage.setItem('numSet', document.getElementById('phonedisp').innerHTML);
-    localStorage.setItem('addSet', document.getElementById('locationdisp').innerHTML);
+function changePassword() {}
 
-
-    var image = document.getElementById('image-display').src;
-    if (image) {
-        localStorage.setItem('imageSet', image); 
-    }
+function fetchData() {
+  const playerName = JSON.parse(localStorage.getItem("currentUser")).username;
+  const currentEmail = JSON.parse(localStorage.getItem("currentUser")).email;
+  // const currentPassword = JSON.parse(localStorage.getItem("cuconstrrentUser")).password;
+  const currentProfilePicture = JSON.parse(
+    localStorage.getItem("currentUser")
+  ).profilePicture;
+  document.querySelector("[current-player-name]").textContent =
+    "Current player name: " + playerName;
+  document.querySelector("[current-email]").textContent =
+    "Current email: " + currentEmail;
+  if (currentProfilePicture) {
+    document.querySelector("#image-display").src = currentProfilePicture;
+  }
 }
-
-function dispFromLocal() {
-    var name1 = localStorage.getItem('nameSet');
-    var mail1 = localStorage.getItem('mailSet');
-    var num1 = localStorage.getItem('numSet');
-    var add1 = localStorage.getItem('addSet');
-    var image1 = localStorage.getItem('imageSet'); 
-
-
-    if (name1) document.getElementById('namedisp').innerHTML = name1;
-    if (mail1) document.getElementById('emaildisp').innerHTML = mail1;
-    if (num1) document.getElementById('phonedisp').innerHTML = num1;
-    if (add1) document.getElementById('locationdisp').innerHTML = add1;
-
-
-    if (image1) {
-        document.getElementById('image-display').src = image1; // Hiển thị ảnh từ localStorage
-    }
-}
-
-
 
 // hilariously this file is from an another project, but the code is not used in this project.
 // this is only kept as a referral purpose.
@@ -116,7 +162,6 @@ function dispFromLocal() {
 //     </a>
 //   `;
 // }
-
 
 // ///// Lập trình giao diện hiển thị chatbot.
 // document.body.innerHTML += /*html*/ `

@@ -202,7 +202,7 @@ function validatePasswords() {
   var email = document.getElementById("email").value.trim();
   var password = document.getElementById("pw").value;
   var confirmPassword = document.getElementById("cpw").value;
-
+var profilePicture = "/img/default-avatar.png" // placeholder pfp
   if (username.length < 6) {
     alert("Username is too short! Lengthen it to at least 6 characters.");
     return; // Stop further execution
@@ -242,7 +242,7 @@ function validatePasswords() {
       alert("Email already registered! Please use a different email.");
       return;
     }
-    users.push({ username, email, password });
+    users.push({ username, email, password, profilePicture });
     localStorage.setItem("users", JSON.stringify(users));
     location.href = "./index.html";
   }

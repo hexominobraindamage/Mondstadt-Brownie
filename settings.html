@@ -33,15 +33,19 @@
         <div class="labelscontainer">
           <div class="input">
             Avatar:
-            <input id="image-file" type="file" />
+            <label for="file-upload" class="custom-file-upload">
+              <i class="fa-solid fa-upload"></i> Click to upload...
+          </label>
+          <input id="file-upload" type="file"/>
+        
           </div>
           <div class="input">
-            <span style="margin-bottom: 10px">Current player name: </span>
+            <span style="margin-bottom: 10px" current-player-name>Current player name: </span>
             New player name:
-            <input type="text" name="" id="namechange" />
+            <input type="text" name="" id="namechange" autocomplete="off"/>
           </div>
           <div class="input">
-            <span style="margin-bottom: 10px">Current email: </span>
+            <span style="margin-bottom: 10px" current-email>Current email: </span>
             New email account:
             <input type="text" name="" id="emailchange" autocomplete="off"> 
             <input type="button" value="Save changes" save-modified-changes>

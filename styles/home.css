@@ -276,3 +276,23 @@ max-width: 200px;
   justify-content: space-between;
   width: 90%;
 }
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width:150px;
+  font-size: 14px;
+}
+
+input{
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #8a571d80;
+  border-radius: 4px;
+  background-color: #383030;
+  color: #fff;
+}

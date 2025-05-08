@@ -20,8 +20,8 @@ searchInput.addEventListener("input", (e) => {
 // finally made sense of this code, i really fucking need some sleep it's 1:40 as of this writing
 // this is a fetch request to get the data from the json "server", and then map the data to the song array
 //TODO: make things clickable
-fetch(
-  "https://my-json-server.typicode.com/littleheartsbms/Mondstadt-Brownie/songs"
+ fetch(
+  "https://my-json-server.typicode.com/yumemizook/Mondstadt-Brownie/songs"
 )
   .then((response) => response.json())
   .then((data) => {
@@ -30,8 +30,8 @@ fetch(
       const title = card.querySelector("[data-title]");
       const artist = card.querySelector("[data-artist]");
       const series = card.querySelector("[data-series]");
-// title.href = `./${song.title}.html`;
-// title.target = "_blank";
+      title.href = `./${song.title.split(" ").join("").toLowerCase()}.html`;
+      title.target = "_blank";
       title.textContent = song.title;
       artist.textContent = song.artist;
       series.textContent = song.series;

@@ -49,3 +49,9 @@ padding: .5rem;
 .hide{
   display: none;
 }
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
