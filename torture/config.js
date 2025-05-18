@@ -95,6 +95,7 @@ function changePassword(event) {
     alert(
       "Password is too short to be secure! Lengthen it to at least 8 characters."
     );
+    return;
     // Stop further execution
   } else if (!newPasswordValue.match(upperCaseLetters)) {
     alert("Password must contain at least one uppercase letter!");
@@ -104,13 +105,13 @@ function changePassword(event) {
     return; // Stop further execution
   } else if (!newPasswordValue.match(numbers)) {
     alert("Password must contain at least one number!");
-    return; // Stop further execution
+    return; 
   } else if (newPasswordValue !== confirmNewPasswordInput.value) {
     alert("Password must be the same!");
-    return; // Stop further execution
+    return; 
   } else if (newPasswordValue === oldPasswordValue) {
     alert("Your new password is the same as your old one!");
-    return; // Stop further execution
+    return; 
   } else {
     if (newPasswordValue) {
       currentUser.password = newPasswordValue;

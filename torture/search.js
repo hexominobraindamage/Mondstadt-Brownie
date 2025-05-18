@@ -19,7 +19,7 @@ searchInput.addEventListener("input", (e) => {
 
 // finally made sense of this code, i really fucking need some sleep it's 1:40 as of this writing
 // this is a fetch request to get the data from the json "server", and then map the data to the song array
-//TODO: make things clickable
+//TODO: make things REDIRECT to the right pages
  fetch(
   "https://my-json-server.typicode.com/yumemizook/Mondstadt-Brownie/songs"
 )
