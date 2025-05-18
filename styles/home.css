@@ -296,3 +296,7 @@ input{
   background-color: #383030;
   color: #fff;
 }
+
+button{
+  cursor: pointer;
+}

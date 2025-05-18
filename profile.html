@@ -19,10 +19,10 @@ $.get("/footer.html", function (data) {
 <div class="profilecontainer">
     <div class="profile">
         <div class="avatar">
-          <img src="./img/default-avatar.png" alt="" />
+          <img src="./img/default-avatar.png" alt="" id="playerpfp"/>
         </div>
         <div class="info">
-          <div class="name"><h1>Default User</h1></div>
+          <div class="name"><h1 playername>Default User</h1></div>
           <div class="name"><h2>PUMBILITY: 0</h2></div>
           <div class="changeset">
             <a href="./settings.html" class="profilesettings">Change Settings</a>
@@ -63,4 +63,5 @@ $.get("/footer.html", function (data) {
      
       </div>
 </body>
+<script src="/torture/profileloader.js"></script>
 </html>
